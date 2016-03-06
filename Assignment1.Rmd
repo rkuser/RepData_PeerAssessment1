@@ -11,17 +11,28 @@ knitr::opts_chunk$set(echo = TRUE)
 
 This assignment will be described in multiple parts. You will need to write a report that answers the questions detailed below. Ultimately, you will need to complete the entire assignment in a single R markdown document that can be processed by knitr and be transformed into an HTML file.
 
-Fork/clone the GitHub repository created for this assignment. You will submit this assignment by pushing your completed files into your forked repository on GitHub. The assignment submission will consist of the URL to your GitHub repository and the SHA-1 commit ID for your repository state.
+Steps that I took:
+
+I Forked/cloned the GitHub repository created for this assignment.
+
 <https://github.com/rdpeng/RepData_PeerAssessment1>.
 
-
-
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+I unzipped and loaded the Activity monitoring data with the following command in R.
 
 ```{r cars}
-summary(cars)
+echo = TRUE
+setwd("~/Desktop/Coursera/Reproducible_data/RepData_PeerAssessment1/")
+activity <- NULL
+activity <- read.csv("activity.csv", header = T, sep = ",")
 ```
+
+```{r cars}
+echo = TRUE
+setwd("~/Desktop/Coursera/Reproducible_data/RepData_PeerAssessment1/")
+activity <- NULL
+activity <- read.csv("activity.csv", header = T, sep = ",")
+```
+
 
 ## Including Plots
 
