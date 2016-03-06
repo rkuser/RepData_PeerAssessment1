@@ -17,14 +17,20 @@ I Forked/cloned the GitHub repository created for this assignment.
 
 <https://github.com/rdpeng/RepData_PeerAssessment1>.
 
-I unzipped and loaded the Activity monitoring data with the following command in R.
+I unzipped and loaded the Activity monitoring data into a format suitable for this analysis with the following command in R.
 
 ```{r cars}
 echo = TRUE
-setwd("~/Desktop/Coursera/Reproducible_data/RepData_PeerAssessment1/")
+setwd("~/Desktop/Coursera/Reproducible_data/")
 activity <- NULL
 activity <- read.csv("activity.csv", header = T, sep = ",")
 ```
+
+### What is the average daily activity pattern?
+
+Make a time series plot (i.e. 𝚝𝚢𝚙𝚎 = "𝚕") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
+Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+
 
 ```{r cars}
 echo = TRUE
