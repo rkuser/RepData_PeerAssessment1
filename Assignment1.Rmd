@@ -46,3 +46,10 @@ hist(sum_ea_day, xlab = "sum of steps each day", main = "Histogram of steps take
 ```
 
 
+```{r echo = FALSE}
+setwd("~/Desktop/Coursera/Reproducible_data/RepData_PeerAssessment1/")
+activity <- NULL
+activity <- read.csv("activity.csv", header = T, sep = ",")
+sum_ea_day <- tapply(activity$steps, activity$date, sum, na.rm=T)
+hist(sum_ea_day, xlab = "sum of steps each day", main = "Histogram of steps taken each day")
+``` 
