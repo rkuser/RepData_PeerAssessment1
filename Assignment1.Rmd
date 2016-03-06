@@ -31,6 +31,7 @@ activity <- read.csv("activity.csv", header = T, sep = ",")
 For this part of the assignment, you can ignore the missing values in the dataset.
 
 Calculate the total number of steps taken per day
+
 1. sum steps for each day 
 
 ```{r cars}
@@ -53,3 +54,4 @@ activity <- read.csv("activity.csv", header = T, sep = ",")
 sum_ea_day <- tapply(activity$steps, activity$date, sum, na.rm=T)
 hist(sum_ea_day, xlab = "sum of steps each day", main = "Histogram of steps taken each day")
 ``` 
+
