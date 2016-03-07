@@ -45,6 +45,7 @@ Make a histogram of the total number of steps taken each day
 echo = TRUE
 hist(sum_ea_day, xlab = "sum of steps each day", main = "Histogram of steps taken each day")
 ```
+save file as histogram1.png
 
 ![Sample panel plot](histogram1.png) 
 
@@ -73,6 +74,84 @@ time_series <- tapply(activity$steps, activity$interval, mean, na.rm=T)
 plot(time_series ~ unique(activity$interval), type="l", xlab = "Time series (5-min interval)", ylab = "Average number of steps taken")
 ```
 
+save file as time_series.png
 
-Whic![Sample panel plot](time_series.png) 
-h 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+![Sample panel plot](time_series.png) 
+
+
+Which 5 minute interval on average across all the days in the dataset, contains the maximum number of steps?
+
+```{r cars}
+echo = TRUE
+time_series[which.max(time_series)]
+```
+
+```r
+835 
+206.1698 
+```
+
+####Imputing missing values
+
+Calculate and report the total number of missing values in the dataset ie the total number of rows with NAs
+
+```{r cars}
+echo = TRUE
+table(is.na(activity) == TRUE)
+```
+
+```r
+FALSE  TRUE 
+50400  2304 
+```
+Thus there are 2304 missing values in the dataset
+
+Devise a strategy for filling in all of the missing values in the dataset. The strategy does not need to be sophisticated. For example, you could use the mean/mean for that day, or the mean for that 5-minute interval etc.
+Create a new dataset that is equal to the original dataset but with the missing data filled in
+
+```{r cars}
+echo = TRUE
+# create loop that fills in where NAs exist
+activitynas <- activity  # dataset without NAs
+for (i in 1:nrow(activity)){
+    if(is.na(activity$steps[i])){
+        activitynas$steps[i]<- time_series[[as.character(activity[i, "interval"])]]
+    }
+}
+```
+
+
+Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
+Sum steps for each day 
+
+```{r cars}
+sum_ea_day_nas <- NULL
+echo = TRUE
+sum_ea_day_nas <- tapply(activitynas$steps, activitynas$date, sum, na.rm=T)
+```
+
+```{r cars}
+echo = TRUE
+hist(sum_ea_day_nas, xlab = "sum of steps each day", main = "Histogram of steps taken each day without NAs")
+```
+
+Save file as histogram2.png
+
+![Sample panel plot](histogram2.png) 
+
+Calculate and report the mean and median of the total number of steps taken per day
+
+```{r cars}
+echo = TRUE
+mean_sum_ea_day_nas <- round(mean(sum_ea_day_nas))
+median_sum_ea_day_nas <- round(median(sum_ea_day_nas))
+print(c("The mean is",mean_sum_ea_day_nas))
+print(c("The median is",median_sum_ea_day_nas))
+```
+
+```r
+[1] The mean is 10766
+[2] The median is 10766
+```
+
+
