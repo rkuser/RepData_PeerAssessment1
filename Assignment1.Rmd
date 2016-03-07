@@ -55,3 +55,7 @@ sum_ea_day <- tapply(activity$steps, activity$date, sum, na.rm=T)
 hist(sum_ea_day, xlab = "sum of steps each day", main = "Histogram of steps taken each day")
 ``` 
 
+```{r echo = FALSE}
+![Histogram.](~/histogram1.png)
+``` 
+
