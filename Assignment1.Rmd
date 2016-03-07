@@ -56,6 +56,7 @@ hist(sum_ea_day, xlab = "sum of steps each day", main = "Histogram of steps take
 ``` 
 
 ```{r echo = FALSE}
-![Histogram.](histogram1.png)
+![Sample panel plot](plots/histogram.png) 
 ``` 
+
 
