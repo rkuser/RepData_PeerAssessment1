@@ -21,7 +21,7 @@ I Forked/cloned the GitHub repository created for this assignment.
 
 I unzipped and loaded the Activity monitoring data into a format suitable for this analysis with the following command in R.
 
-```
+```{r cars}
 echo = TRUE
 setwd("~/Desktop/Coursera/Reproducible_data/")
 activity <- NULL
