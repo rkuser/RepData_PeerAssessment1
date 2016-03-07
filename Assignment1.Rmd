@@ -55,9 +55,11 @@ echo = TRUE
 mean_sum_ea_day <- round(mean(sum_ea_day))
 median_sum_ea_day <- round(median(sum_ea_day))
 print(c("The mean is",mean_sum_ea_day))
+print(c("The median is",median_sum_ea_day))
 ```
 
 ```r
-[1] "The mean is" "9354" 
+[1] The mean is 9354
+[2] The median is 10395
 ```
 
